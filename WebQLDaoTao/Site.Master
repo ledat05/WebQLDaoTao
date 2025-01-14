@@ -71,14 +71,14 @@
         </nav>
         <div class="container-fluid text-center">
             <div class="row content">
-                <div class="col-md-3">
-                    <ul class="list-group">
-             <li href="" class="list-group-item active">CHỨC NĂNG CHÍNH</li>
-             <li href="QLMonHoc.aspx" class="list-group-item"><span class="glyphicon glyphicon-book"></span>Quản Lý Môn Học</li>
-             <li  href="QLKhoa.aspx" class="list-group-item"><span class="glyphicon glyphicon-book"></span>Quản lý khoa</li>
-             <li href="QLSinhVien.aspx" class="list-group-item"><span class="glyphicon glyphicon-user"></span>Quản lý sinh viên</li>
-             <li  href="#" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>Quản lýđiểm</li>
-                </ul>
+                <div class="col-md-3">l>
+                    <div class="list-group">
+                         <a href="#" class="list-group-item active">CHỨC NĂNG CHÍNH</a>
+                         <a href="QLMonHoc.aspx" class="list-group-item"><span class="glyphicon glyphicon-book"></span>Quản lý môn học</a>
+                         <a href="QLKhoa.aspx" class="list-group-item"><span class="glyphicon glyphicon-book"></span>Quản lý khoa</a>
+                         <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span>Quản lýsinh viên</a>
+                         <a href="#" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>Quản lýđiểm</a>
+                    </div>
                 </div>
                 <div class="col-md-9">
                     <asp:ContentPlaceHolder ID="Main" runat="server">
