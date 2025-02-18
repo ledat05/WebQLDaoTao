@@ -35,13 +35,14 @@
                     <asp:Button ID="Button1" OnClick="btnSubmit_Click" runat="server" Text="Lưu" CssClass="btn btn-primary" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-            </div>
+            </div>      
         </div>
     </div>
       <div>
         <asp:GridView  ID="gvKhoa" runat="server" CssClass="table table-bordered table-hover"
             DataSourceID="obsKhoa" AutoGenerateColumns="false" Height="301px" DataKeyNames="MaKH"
             AllowPaging="true" PageSize="5" OnSelectedIndexChanged="gvKhoa_SelectedIndexChanged">
+
 
             <Columns>     
                 <asp:BoundField HeaderText="Mã Khoa" DataField="MaKH" />
