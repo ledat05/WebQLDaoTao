@@ -48,6 +48,7 @@ namespace WebQLDaoTao.Models
             cmd.Parameters.AddWithValue("noisinh", sv.NoiSinh);
             cmd.Parameters.AddWithValue("diachi", sv.DiaChi);
             cmd.Parameters.AddWithValue("makh", sv.MaKH);
+            cmd.Parameters.AddWithValue("masv", sv.MaSV);
             return cmd.ExecuteNonQuery();
         }
         public int Delete(SinhVien sv)

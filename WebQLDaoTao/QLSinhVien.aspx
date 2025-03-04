@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-    <p>
+    <h1>
         Quản Lý Sinh Viên
-    </p>
+    </h1>
       </br>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thêm môn học</button>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thêm sinh viên</button>
 
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
@@ -86,11 +86,28 @@
                 <asp:BoundField DataField="MaSV" HeaderText="Mã SV" ReadOnly="true"></asp:BoundField>
                 <asp:BoundField DataField="HoSV" HeaderText="Họ SV" ControlStyle-Width="120px"></asp:BoundField>
                 <asp:BoundField DataField="TenSV" HeaderText="Tên SV" ControlStyle-Width="60px"></asp:BoundField>
-                <asp:CheckBoxField DataField="GioiTinh" HeaderText="Giới Tính"></asp:CheckBoxField>
+                <asp:TemplateField HeaderText="Giới Tính">
+                     <ItemTemplate>
+                        <%# Convert.ToBoolean(Eval("gioitinh"))? "Nam" :"Nữ"  %>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                       <asp:CheckBox ID="ckPhai" runat="server" DataSourceID="odsKhoa"
+                                           Checked='<%# Bind("gioitinh") %>'></asp:CheckBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="NgaySinh" HeaderText="Ngày Sinh" ControlStyle-Width="80px" DataFormatString="{0: dd/MM/yyyy}"></asp:BoundField>
                 <asp:BoundField DataField="NoiSinh" HeaderText="Nơi Sinh" ControlStyle-Width="80px"></asp:BoundField>
                 <asp:BoundField DataField="DiaChi" HeaderText="Địa Chỉ"></asp:BoundField>
-                <asp:BoundField DataField="MaKH" HeaderText="Khoa" ControlStyle-Width="30px"></asp:BoundField>
+                <asp:TemplateField HeaderText="Khoa">
+                    <ItemTemplate>
+                        <%# Eval("Makh") %>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                       <asp:DropDownList ID="ddlKhoa" runat="server" DataSourceID="odsKhoa"
+
+                                              DataTextField="tenkh" DataValueField="makh" SelectedValue='<%# Bind("MaKH") %>'></asp:DropDownList>
+                    </EditItemTemplate>
+                </asp:TemplateField>
                 <asp:CommandField ShowEditButton="true" ShowDeleteButton="true" ItemStyle-Wrap="false" ButtonType="Button" />
             </Columns>
             <PagerStyle CssClass="pagination-ys" HorizontalAlign="Center" />

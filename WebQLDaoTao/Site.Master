@@ -62,7 +62,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="QLMonHoc.aspx">Môn học</a></li>
                             <li><a href="QLKhoa.aspx">Khoa</a></li>
-                            <li><a href="#">Sinh viên</a></li>
+                            <li><a href="QLSinhVien.aspx">Sinh viên</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Quản lý điểm thi</a></li>
