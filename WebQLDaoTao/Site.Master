@@ -68,6 +68,10 @@
                     </li>
                     <li><a href="#">Quản lý điểm thi</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="Logout.aspx">Logout</a></li>
+                    <asp:LinkButton ID="btLogout" runat="server">Logout</asp:LinkButton>
+                </ul>
             </div>
         </nav>
         <div class="container-fluid text-center">
