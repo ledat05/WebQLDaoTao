@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebQLDaoTao.Models;
 
 namespace WebQLDaoTao
 {
@@ -19,12 +20,14 @@ namespace WebQLDaoTao
         {
             string username = txtUserName.Text;
             string password = txtPassword.Text;
-            if(FormsAuthentication.Authenticate(username,password))
+            UserDao uDAO = new UserDao();
+            if (uDAO.ValidateUser(username, password))
             {
-                FormsAuthentication.RedirectFromLoginPage(username,true);
-            }  else
+                FormsAuthentication.RedirectFromLoginPage(username, true); //luu lai thong tin xac thuc
+            }
+            else
             {
-                //
+                lbThongBao.Text = "Đăng nhập không thành công";
             }
         }
     }
